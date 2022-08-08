@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>What's the weather like?</title>
+    <title>Weather App: What's the weather like?</title>
+    <link rel="icon" , href="../../public/img/weather.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    What's the weather like?
-                </h1>
-            </div>
-        </div>
-    </section>
+    {% include "./includes/header.html" %}
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -47,19 +40,19 @@
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-50x50">
-                                    <img src="{{ weather_info.icons }}" alt="Image">
+                                    <img src="{{ res.icons }}" alt="Image">
                                 </figure>
                             </div>
                             <div class="media-content">
                                 <div class="content">
                                     <p>
-                                        <span class="title">It was {{ weather_info.desc }} in {{ weather_info.place_name }}</span>
+                                        <span class="title">It was {{ res.desc }} in {{ res.place_name }}</span>
                                         <br>
-                                        <span class="subtitle">{{ weather_info.temp }}° C but feels like {{ weather_info.feels_like_temp }}° C</span>
-                                        <br>Precipitation: {{ weather_info.rain }}
-                                        <br>Cloud Cover: {{ weather_info.ccover }} %
-                                        <br>Humidity: {{ weather_info.humidity }}
-                                        <br>Wind Speed: {{ weather_info.swind }} km/hr
+                                        <span class="subtitle">{{ res.temp }}° C but feels like {{ res.feels_like_temp }}° C</span>
+                                        <br>Precipitation: {{ res.rain }}
+                                        <br>Cloud Cover: {{ res.ccover }} %
+                                        <br>Humidity: {{ res.humidity }}
+                                        <br>Wind Speed: {{ res.swind }} km/hr
                                     </p>
                                 </div>
                             </div>
@@ -69,8 +62,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-    </footer>
+    {% include "./includes/footer.html" %}
 </body>
 
 </html>
